@@ -47,7 +47,7 @@ const App = () => {
         sendVerificationEmail();
       })
       .catch((err) => {
-        alert("error");
+        alert(err);
         console.log(err);
       });
   };
@@ -62,7 +62,7 @@ const App = () => {
       })
       .catch((err) => {
         console.log(err);
-        alert("Error al enviar email");
+        alert("Error al enviar email" + err);
       });
   };
   const cambiar = (e) => {
@@ -75,21 +75,51 @@ const App = () => {
 
   return (
     <div>
-      <input type="" placeholder="email" name="email" onChange={cambiar} />
+    <nav className="nav-extended green">
+      <div className="nav-wrapper ">
+        <a href="#" className="brand-logo" id="logo">ADMINISTRADOR</a>
+      
+      <div>
+        <ul className="right hide-on-med-and-down">
+        <a className="btn-floating btn-large waves-effect waves-light red" href="https://seaniadministrador.web.app/alumnos" title="Regresar"><i className="material-icons">arrow_back</i></a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br/>
+<div className="container">
+    <h3 className="center" >REGISTRO DE ALUMNOS ETAPA 1 2021</h3>
+    <br/>
+  <div className="card-panel hoverable grey lighten-5 col s12">
+      <input type="text" placeholder="email" name="email" onChange={cambiar} />
+  </div>
+  
+  <div className="card-panel hoverable grey lighten-5 col s12">
       <input
-        type=""
+        type="text"
         placeholder="password"
         name="password"
         onChange={cambiar}
       />
+  </div>
+
+  <div className="card-panel hoverable grey lighten-5 col s12">
       <input
-        type=""
+        type="text"
         placeholder="Nombre completo"
         name="username"
         onChange={cambiar}
       />
-      <input type="" placeholder="Carrera" name="carrera" onChange={cambiar} />
-      <button onClick={registrar}>Enviar informacion</button>
+  </div>
+
+  <div className="card-panel hoverable grey lighten-5 col s12">
+      <input type="text" placeholder="Carrera" name="carrera" onChange={cambiar} />
+  </div>
+    <div className="center">
+      <a className="waves-effect waves-light btn-large center orange darken-4" id="boton" type="submit" onClick={registrar}><i className="material-icons right">send</i>Registrar alumno</a>
+    </div>  
+</div>
+
     </div>
   );
 };

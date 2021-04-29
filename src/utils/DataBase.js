@@ -4,7 +4,7 @@ import * as firebase from "firebase";
 const db = firebase.firestore(firebaseApp);
 
 export const addAlumn = async (d, data) => {
-  db.collection("alumnos2")
+  db.collection("e1-2021")
     .doc(d)
     .set(data)
     .then((res) => console.log("todo bien"))
